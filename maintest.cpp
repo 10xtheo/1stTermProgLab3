@@ -73,9 +73,7 @@ int main()
   // #1.1
   /*
   srand(time(0));
-  int x = rand() % (N*N+1);
   initscr();
-  int counter = 0;
   for (int i = 0; i < N/2; ++i)
   {
     for (int j = 0; j < N-2*i; ++j)
@@ -123,7 +121,6 @@ int main()
   // #1.2
   /*
   initscr();
-  int counter = 0;
   int i = -1;
   for (; i < N-1;)
   {
