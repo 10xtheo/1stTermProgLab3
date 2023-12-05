@@ -72,45 +72,43 @@ int main()
   // endwin();
   // #1.1
   /*
+  srand(time(0));
+  int x = rand() % (N*N+1);
   initscr();
   int counter = 0;
   for (int i = 0; i < N/2; ++i)
   {
     for (int j = 0; j < N-2*i; ++j)
     {
-      *((*A+j)+i*N+i) = counter;
+      *((*A+j)+i*N+i) = rand() % (N*N+1);
       move((j+i*N+i)/N, (j+i*N+i)%N*(lenOfNumber(N*N)+1));
       printw("%0*d", lenOfNumber(N*N),  *((*A+j)+i*N+i));
       refresh();
       usleep(100000);
-      counter += 1;
     }
     for (int j = 0; j < N-2 - 2*i  ; ++j)
     {
-      *((*A+((i+2)*N-(i+1))+j*N)) = counter;
+      *((*A+((i+2)*N-(i+1))+j*N)) = rand() % (N*N+1);
       move(((i+2)*N-(i+1)+j*N)/N, (((i+2)*N-(i+1)+j*N)%N)*(lenOfNumber(N*N)+1));
       printw("%0*d", lenOfNumber(N*N),  *((*A+((i+2)*N-(i+1))+j*N)));
       refresh();
       usleep(100000);
-      counter += 1;
     }
     for (int j = 0; j < N - 2*i; ++j)
     {
-      *((*A+((N-i)*N-(i+1)) - j)) = counter;
+      *((*A+((N-i)*N-(i+1)) - j)) = rand() % (N*N+1);
       move(((N-i)*N-(i+1)-j)/N, (((N-i)*N-(i+1)-j)%N)*(lenOfNumber(N*N)+1));
       printw("%0*d", lenOfNumber(N*N),  *((*A+((N-i)*N-(i+1)) - j)));
       refresh();
       usleep(100000);
-      counter += 1;
     }
     for (int j = 0; j < N-2 - 2*i; ++j)
     {
-      *((*A+((N-2-i)*N+i) - j*N)) = counter;
+      *((*A+((N-2-i)*N+i) - j*N)) = rand() % (N*N+1);
       move(((N-2-i)*N+i - j*N)/N, (((N-2-i)*N+i - j*N)%N)*(lenOfNumber(N*N)+1));
       printw("%0*d", lenOfNumber(N*N),  *((*A+((N-2-i)*N+i) - j*N)));
       refresh();
       usleep(100000);
-      counter += 1;
     }
   }
   endwin();
@@ -132,8 +130,7 @@ int main()
     i += 1;
     for (int j = 0; j < N; ++j)
     {
-      *(*A+j*N+i) = counter;
-      counter += 1;
+      *(*A+j*N+i) = rand() % (N*N+1);
       move((j*N+i)/N, ((j*N+i)%N)*(lenOfNumber(N*N)+1));
       printw("%0*d", lenOfNumber(N*N),  *(*A+j*N+i));
       refresh();
@@ -142,8 +139,7 @@ int main()
     i+=1;
     for (int j = N - 1; j >= 0; --j)
     {
-      *(*A+j*N+i) = counter;
-      counter += 1;
+      *(*A+j*N+i) = rand() % (N*N+1);
       move((j*N+i)/N, ((j*N+i)%N)*(lenOfNumber(N*N)+1));
       printw("%0*d", lenOfNumber(N*N),  *(*A+j*N+i));
       refresh();

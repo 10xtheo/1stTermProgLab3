@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cstdlib>
 #include <curses.h>
 #include <iostream>
 #include <ncurses.h>
@@ -59,7 +60,6 @@ int main()
     {56,57,58,59,60,61,62,63},
   };
   // #1.1
-  /*
   initscr();
   int counter = 0;
   for (int i = 0; i < N/2; ++i)
@@ -109,7 +109,7 @@ int main()
     cout << (((i + 1) % N == 0) ? '\n':' ');
     //cout << *(*A+i) << endl;
   }
-  */
+
   // #1.2
   /*
   initscr();
