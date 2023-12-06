@@ -288,27 +288,45 @@ int main()
         int userNumber;
         cout << "Введите число, с которым хотите произвести операцию: ";
         userNumber = getNumber();
-        if (choice == 0)
-          for (int i = 0; i < N*N; ++i)
+        switch (choice)
+        {
+          case 0:
           {
-            *(*A+i) += userNumber;
+            for (int i = 0; i < N*N; ++i)
+            {
+              *(*A+i) += userNumber;
+            }
+            break;
           }
-        else if (choice == 1)
-          for (int i = 0; i < N*N; ++i)
+          case 1:
           {
-            *(*A+i) -= userNumber;
+            for (int i = 0; i < N*N; ++i)
+            {
+              *(*A+i) -= userNumber;
+            }
+            break;
           }
-        else if (choice == 2)
-          for (int i = 0; i < N*N; ++i)
+          case 2:
           {
-            *(*A+i) *= userNumber;
+            for (int i = 0; i < N*N; ++i)
+            {
+              *(*A+i) *= userNumber;
+            }
+            break;
           }
-        else if (choice == 3)
-          for (int i = 0; i < N*N; ++i)
+          case 3:
           {
-            *(*A+i) /= userNumber;
+            for (int i = 0; i < N*N; ++i)
+            {
+              *(*A+i) /= userNumber;
+            }
+            break;
           }
-        else cout << "Введите номер операции из предложенных" << endl;
+          default:
+          {
+            cout << "Введите номер операции из предложенных" << endl;
+          }
+        }
         cout << "После преобразования: " << endl;
         for (int i = 0; i < N*N; ++i)
         {
