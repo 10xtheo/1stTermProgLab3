@@ -59,6 +59,7 @@ void shakerSort(int *array, int length)
 
 int main() 
 {
+  setlocale(LC_ALL, "Russian");
   cout << "Введите размерность матрицы: " << endl;
   int scale;
   cin >> scale;
