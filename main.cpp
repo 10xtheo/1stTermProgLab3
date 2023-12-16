@@ -62,7 +62,7 @@ int main()
   setlocale(LC_ALL, "Russian");
   cout << "Введите размерность матрицы: " << endl;
   int scale;
-  cin >> scale;
+  scale = getNumber();
   const int N = scale;
   int A[N][N];
   srand(time(0));
