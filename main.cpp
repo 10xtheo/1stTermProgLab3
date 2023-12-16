@@ -70,7 +70,7 @@ int main()
   {
     cout << "#########################" << endl;
     cout << "Выберите опцию программы: " << endl
-    << "0 ИДЗ #10, является ли матрица волшебным квадратом" << endl
+    << "0 ИДЗ #1" << endl
     << "11 Заполнение спиралью" << endl
     << "12 Заполнение змейкой" << endl
     << "21 Перестановка блоков по часовой стрелке" << endl
@@ -84,6 +84,43 @@ int main()
     userChoice = getNumber();
     switch (userChoice)
     {
+      case 0:
+      {
+        cout << "Сгенерируем и выведем 1 матрицу:" << endl;
+        int B[N][N];
+        for (int i = 0; i < N*N; ++i)
+        {
+          *(*B+i) = rand() % 100 + 1;
+        }
+        for (int i = 0; i < N*N; ++i)
+        {
+          printf("%0*d", lenOfNumber(N*N),  *(*B+i));
+          cout << (((i + 1) % N == 0) ? '\n':' ');
+        }
+        cout << "Сгенерируем и выведем 2 матрицу:" << endl;
+        int C[N][N];
+        for (int i = 0; i < N*N; ++i)
+        {
+          *(*C+i) = rand() % 100 + 1;
+        }
+        for (int i = 0; i < N*N; ++i)
+        {
+          printf("%0*d", lenOfNumber(N*N),  *(*C+i));
+          cout << (((i + 1) % N == 0) ? '\n':' ');
+        }
+        cout << "Сложим матрицы: " << endl;
+        int D[N][N];
+        for (int i = 0; i < N*N; ++i)
+        {
+          *(*D+i) = *(*B+i)+*(*C+i);
+        }
+        for (int i = 0; i < N*N; ++i)
+        {
+          printf("%0*d", lenOfNumber(2*N*N),  *(*D+i));
+          cout << (((i + 1) % N == 0) ? '\n':' ');
+        }
+        break;
+      }
       case 11:
       {
         // #1.1
